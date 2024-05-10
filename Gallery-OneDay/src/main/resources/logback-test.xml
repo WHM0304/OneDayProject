@@ -15,16 +15,16 @@
     <!-- 적용하는 프로젝트의  Base Package를 설정 -->
     <!-- STDOUT 에 설정된 pattern 으로 Console 에 log 출력 -->
     <!-- 중복되어 출력되는 것을 방지 : additivity="false -->
-    <logger name="com.callor.gallery" level="DEBUG" additivity="false">
+    <logger name="com.callor.hello" level="DEBUG" additivity="false">
         <appender-ref ref="STDOUT" />
     </logger>
 
 
     <!-- 적용하는 프로젝트의  controller와 service  Package의 level을 debug로 설정 -->
-    <logger name="com.callor.gallery.controller" level="DEBUG" additivity="false">
+    <logger name="com.callor.hello.controller" level="DEBUG" additivity="false">
             <appender-ref ref="STDOUT" />       
     </logger>
-    <logger name="com.callor.gallery.service" level="DEBUG" additivity="false">
+    <logger name="com.callor.hello.service" level="DEBUG" additivity="false">
             <appender-ref ref="STDOUT" />
     </logger>
 

@@ -6,25 +6,22 @@
  <mapper namespace="com.callor.hello.dao.GalleryDao">
  
  	<select id="selectAll">
- 		SELECT * FROM tbl_gallerys ORDER BY g_date DESC, g_time DESC
+ 		SELECT * FROM tbl_gallerys 
  	</select>
  	<select id="findById">
  		SELECT * FROM tbl_images WHERE s_id = #{s_id}
  	</select>
  	
- 	<insert id="insert" parameterType="GalleryVO">
- 		<selectKey resultType="String" keyProperty="s_id" order="AFTER">
- 			SELECT LAST_INSERT_ID()
- 		</selectKey>
- 		
+ 	<insert id="insert" >
+		
  	INSERT INTO tbl_gallerys(
 			 	s_id,
 			 	s_email,
 			 	s_password,
-			 	,s_date,s_time,
+			 	s_date,s_time,
 				s_subject,s_content,
 				s_origin_image,s_up_image
-			) VALUES(
+			) VALUE(
 			 	#{s_id},
 			 	#{s_email},
 			 	#{s_password},

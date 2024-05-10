@@ -17,6 +17,9 @@ import com.callor.hello.models.ImageVO;
 import com.callor.hello.service.FileUploadService;
 import com.callor.hello.service.GalleryService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class GalleryServiceImpl implements GalleryService{
 	
@@ -44,6 +47,11 @@ public class GalleryServiceImpl implements GalleryService{
 	
 	
 	
+	@Override
+	public List<ImageVO> findById(String s_id) {
+		
+		return imageDao.findById(s_id);
+	}
 
 	@Override
 	public List<GalleryVO> selectAll() {
@@ -57,6 +65,7 @@ public class GalleryServiceImpl implements GalleryService{
 		String fileName = fileUploadService.fileUpload(image_file);
 		galleryVO.setS_up_image(fileName);
 		setGalleryOptions(galleryVO);
+		log.debug("ㅇㅁ나ㅣㅇㅁ나ㅣㅇㅁ나ㅣㅇㅁ나ㅣ;ㅇㅁㄴ아ㅣ ----{}",galleryVO);
 		int ret = galleryDao.insert(galleryVO);
 		if(ret >0) {
 			return galleryVO;
@@ -74,7 +83,7 @@ public class GalleryServiceImpl implements GalleryService{
 		
 		int sRet = galleryDao.insert(galleryVO);
 		String i_sid = galleryVO.getS_id();
-		
+		log.debug("------------------------{}",galleryVO);
 		List<ImageVO> resultNames = fileUploadService.filesUpload(image_files);
 		int iret = imageDao.inserts(i_sid, resultNames);
 		
@@ -90,5 +99,9 @@ public class GalleryServiceImpl implements GalleryService{
 		vo.setS_time(lt.format(time));
 		
 	}
+
+
+
+
 
 }

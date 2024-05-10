@@ -13,6 +13,13 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.callor.hello.models.GalleryVO;
 import com.callor.hello.service.GalleryService;
 
+import lombok.extern.slf4j.Slf4j;
+
+
+
+
+
+@Slf4j
 @Controller
 @RequestMapping(value="/gallery")
 public class GalleryController {
@@ -30,21 +37,24 @@ public class GalleryController {
 
 
 
-	@RequestMapping(value="/insert" , method=RequestMethod.GET)
+	@RequestMapping(value="insert" , method=RequestMethod.GET)
 	public String insert() {
 		return "gallery/insert";
 		
 	}
-	@RequestMapping(value="/insert", method=RequestMethod.POST)
+	@RequestMapping(value="insert", method=RequestMethod.POST)
 	public String insert(GalleryVO galleryVO,
 			@RequestParam("image_file") MultipartFile image_file,
 			MultipartHttpServletRequest image_files,
 			Model model
 			) {
+		
+		log.debug("QWeqweqweqwewqeWQ ----------{}",image_file.getOriginalFilename());
+		
 		String singleFimeName = image_file.getOriginalFilename();
 		GalleryVO resultVO = null;
 		try {
-			if(singleFimeName.isEmpty()) {
+			if(!singleFimeName.isEmpty()) {
 				resultVO = galleryService.createGallery(galleryVO, image_file);
 			}
 			if(image_files.getFiles("image_files").size()>0) {
@@ -54,8 +64,8 @@ public class GalleryController {
 		} catch (Exception e) {
 			
 		}
-		model.addAttribute("IMAGE", image_file.getOriginalFilename());
-		return "gallery/insert";
+//		model.addAttribute("IMAGE", image_file.getOriginalFilename());
+		return "redirect:/";
 	}
 
 }

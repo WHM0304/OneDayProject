@@ -18,6 +18,7 @@
 	<!-- Handles HTTP GET requests for /static/** by efficiently serving up 
 		static resources in the ${webappRoot}/resources directory -->
 	<mvc:resources mapping="/static/**" location="/static/" />
+	<mvc:resources mapping="/file/upload/**" location="file:///app/file/upload/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources 
 		in the /WEB-INF/views directory -->

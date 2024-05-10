@@ -14,6 +14,9 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import com.callor.hello.models.ImageVO;
 import com.callor.hello.service.FileUploadService;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class FileUploadServiceImpl implements FileUploadService{
 	
@@ -31,6 +34,7 @@ public class FileUploadServiceImpl implements FileUploadService{
 	@Override
 	public String fileUpload(MultipartFile file) throws Exception {
 		String originalName = file.getOriginalFilename();
+		log.debug("!!!!!!!!!!!!!!!!!!!!{}",originalName);
 		if(originalName.isEmpty()) {
 			return null;
 		}

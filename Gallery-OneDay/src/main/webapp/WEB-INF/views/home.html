@@ -32,9 +32,16 @@
         <a th:href="@{/gallery/insert}" class="button">이미지업로드</a>
       </section>
       <section class="section container">
-        <div class="card">
+        <div class="card" th:each="GA:${GALLERYS}">
           <div>
-            <a><img /></a>
+            <a
+              th:href="@{/file/upload/{image}(image=${IMAGES[0].i_up_image})}"
+              target="_blank"
+              width="200px"
+            >
+              <img th:src="@{/file/upload/{image}(image=${IMAGES[0].i_up_image})}" width="200px" />
+            </a>
+            <h3 th:text="${GA.s_subject}" class="subject"></h3>
           </div>
         </div>
       </section>

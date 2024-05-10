@@ -20,6 +20,7 @@
 		<property name="dataSource" ref="ds"/>
 		<property name="typeAliasesPackage" value="com.callor.hello.models" />
 		<property name="mapperLocations" value="WEB-INF/spring/mapper/*-mapper.xml" />
+		
 	</bean>
 	<bean class="org.mybatis.spring.SqlSessionTemplate" >
 	<constructor-arg ref="factoryBean" />

@@ -6,6 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.callor.hello.models.GalleryVO;
+import com.callor.hello.models.ImageVO;
 
 public interface GalleryService {
 	
@@ -14,5 +15,7 @@ public interface GalleryService {
 	public GalleryVO createGallery(GalleryVO galleryVO, MultipartFile image_file) throws Exception;
 	
 	public List<GalleryVO> createGallery(GalleryVO galleryVO, MultipartHttpServletRequest image_files) throws Exception;
+
+	public List<ImageVO> findById(String s_id);
 
 }

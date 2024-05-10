@@ -8,7 +8,10 @@
  	<select id="selectAll">
  		SELECT * FROM tbl_images 
  	</select>
- 	<select id="findById"></select>
+ 	<select id="findById">
+ 		SELECT * FROM tbl_images
+ 		WHERE i_sid = #{i_sid}
+ 	</select>
  	
  	<insert id="inserts">
 		INSERT INTO tbl_images(
