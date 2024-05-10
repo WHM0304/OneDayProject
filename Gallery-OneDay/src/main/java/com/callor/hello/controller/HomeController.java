@@ -1,4 +1,4 @@
-package com.callor.hello;
+package com.callor.hello.controller;
 
 import java.text.DateFormat;
 import java.util.Date;

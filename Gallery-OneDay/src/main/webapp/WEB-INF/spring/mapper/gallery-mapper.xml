@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="com.callor.hello.dao.GalleryDao">
+ 
+ 	<select id="selectAll">
+ 		SELECT * FROM tbl_gallerys ORDER BY g_date DESC, g_time DESC
+ 	</select>
+ 	<select id="findById">
+ 		SELECT * FROM tbl_images WHERE s_id = #{s_id}
+ 	</select>
+ 	
+ 	<insert id="insert" parameterType="GalleryVO">
+ 		<selectKey resultType="String" keyProperty="s_id" order="AFTER">
+ 			SELECT LAST_INSERT_ID()
+ 		</selectKey>
+ 		
+ 	INSERT INTO tbl_gallerys(
+			 	s_id,
+			 	s_email,
+			 	s_password,
+			 	,s_date,s_time,
+				s_subject,s_content,
+				s_origin_image,s_up_image
+			) VALUES(
+			 	#{s_id},
+			 	#{s_email},
+			 	#{s_password},
+			 	#{s_date},#{s_time},
+				#{s_subject},#{s_content},
+				#{s_origin_image},#{s_up_image}
+			)
+ 	</insert>
+ 	<update id="update"></update>
+ 	<delete id="delete"></delete>
+ 
+ 	<select id="create_table">
+ 	CREATE TABLE IF NOT EXISTS tbl_gallerys(
+	s_id	VARCHAR(125)		PRIMARY KEY,
+	s_email VARCHAR(50),
+	s_password VARCHAR(250),
+	s_date	VARCHAR(10)	NOT NULL	,	
+	s_time	VARCHAR(10)	NOT NULL	,
+	s_subject	VARCHAR(50)	NOT NULL,	
+	s_content	VARCHAR(255)	NOT NULL,	
+	s_origin_image	VARCHAR(255)	NOT NULL	,
+	s_up_image	VARCHAR(255)	NOT NULL	
+)
+ 	</select>
+ </mapper> 

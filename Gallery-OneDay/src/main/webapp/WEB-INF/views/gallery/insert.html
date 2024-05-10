@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html
+  lang="ko"
+  xmlns:th="http://www.thymeleaf.org"
+  xmlns:layout="http://ultraq.net.nz/thymeleaf/layout"
+  layout:decorate="~{/home}"
+>
+  <section layout:fragment="content">
+    <link rel="stylesheet" th:href="@{/static/css/insert.css}" />
+    <section class="gallery">
+      <form method="POST" enctype="multipart/form-data">
+        <div class="input_box">
+          <input type="text" placeholder="제목" name="s_subject" />
+          <textarea type="text" placeholder="설명" name="s_content"> </textarea>
+          <input type="text" placeholder="이메일" name="s_email" />
+          <input type="password" placeholder="비밀번호" name="s_password" />
+          <input type="hidden" name="s_image" />
+          <div>
+            <input type="file" class="file single" name="image_file" accept="image/*" />
+            <input type="file" class="file multi" name="image_files" accept="image/*" multiple />
+          </div>
+          <div class="image">
+            <img width="200px" class="gallery" />
+          </div>
+          <div class="image multi"></div>
+          <input type="submit" value="저장" />
+        </div>
+      </form>
+    </section>
+  </section>
+</html>

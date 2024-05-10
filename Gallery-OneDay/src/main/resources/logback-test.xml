@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration scan="true" scanPeriod="3 seconds">
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <charset>UTF-8</charset>
+            <Pattern>[%-5level] - %msg%n</Pattern>
+        </encoder>
+    </appender>
+
+    <logger name="org.springframework" level="INFO"/>
+    <logger name="org.mybatis" level="DEBUG"/>
+
+
+    <!-- 적용하는 프로젝트의  Base Package를 설정 -->
+    <!-- STDOUT 에 설정된 pattern 으로 Console 에 log 출력 -->
+    <!-- 중복되어 출력되는 것을 방지 : additivity="false -->
+    <logger name="com.callor.gallery" level="DEBUG" additivity="false">
+        <appender-ref ref="STDOUT" />
+    </logger>
+
+
+    <!-- 적용하는 프로젝트의  controller와 service  Package의 level을 debug로 설정 -->
+    <logger name="com.callor.gallery.controller" level="DEBUG" additivity="false">
+            <appender-ref ref="STDOUT" />       
+    </logger>
+    <logger name="com.callor.gallery.service" level="DEBUG" additivity="false">
+            <appender-ref ref="STDOUT" />
+    </logger>
+
+
+    <root level="WARN">
+        <appender-ref ref="STDOUT"/>
+    </root>
+</configuration>
