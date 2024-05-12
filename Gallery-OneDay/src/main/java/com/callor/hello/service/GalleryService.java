@@ -18,4 +18,6 @@ public interface GalleryService {
 
 	public List<ImageVO> findById(String s_id);
 
+	public List<ImageVO> selectImageAll();
+
 }

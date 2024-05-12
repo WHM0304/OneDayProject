@@ -36,12 +36,12 @@ public class HomeController {
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public String home(Locale locale, Model model) {
 		List<GalleryVO> gList = galleryService.selectAll();
+		List<ImageVO> iList = galleryService.selectImageAll();
 		
+//		String s_id = gList.get(0).getS_id();
+//		List<ImageVO> iList = galleryService.findById(s_id);
 		
-		String s_id = gList.get(0).getS_id();
-		List<ImageVO> iList = galleryService.findById(s_id);
-		
-		log.debug("-------------------------------------------------{}",gList);
+		log.debug("-------------------------------------------------{}",iList);
 		model.addAttribute("GALLERYS",gList);
 		model.addAttribute("IMAGES",iList);
 		

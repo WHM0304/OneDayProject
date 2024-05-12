@@ -6,7 +6,10 @@
 >
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
     <script th:inline="javascript">
       // thymeleaf 에서 사용하는 변수(EL, @{/}) 를 문자열로 변환하여
             //   rootPath 변수에 할당하기
@@ -29,7 +32,9 @@
     </header>
     <section class="main" layout:fragment="content">
       <section class="section button_box">
-        <a th:href="@{/gallery/insert}" class="button">이미지업로드</a>
+        <a th:href="@{/gallery/insert}" class="button"
+          >이미지업로드</a
+        >
       </section>
       <section class="section container">
         <div class="card" th:each="GA:${GALLERYS}">
@@ -39,9 +44,15 @@
               target="_blank"
               width="200px"
             >
-              <img th:src="@{/file/upload/{image}(image=${IMAGES[0].i_up_image})}" width="200px" />
+              <img
+                th:if="${IMAGES[0].i_id == GA.s_id}"
+                th:src="@{/file/upload/{image}(image=${IMAGES[0].i_up_image})}"
+                width="200px"
+              />
             </a>
-            <h3 th:text="${GA.s_subject}" class="subject"></h3>
+            <div>
+              <h3 th:text="${GA.s_subject}" class="subject"></h3>
+            </div>
           </div>
         </div>
       </section>

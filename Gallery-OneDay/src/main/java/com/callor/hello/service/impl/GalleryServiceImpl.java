@@ -54,6 +54,12 @@ public class GalleryServiceImpl implements GalleryService{
 	}
 
 	@Override
+	public List<ImageVO> selectImageAll() {
+		
+		return imageDao.selectAll();
+	}
+
+	@Override
 	public List<GalleryVO> selectAll() {
 		return galleryDao.selectAll();
 		
@@ -99,6 +105,10 @@ public class GalleryServiceImpl implements GalleryService{
 		vo.setS_time(lt.format(time));
 		
 	}
+
+
+
+
 
 
 
