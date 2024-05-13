@@ -1,0 +1,35 @@
+div.contain {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+}
+div.contain input {
+  margin: 15px auto;
+  width: 50%;
+  border-radius: 20px;
+  padding: 0.7rem;
+  border: 1px solid black;
+  outline: none;
+}
+div.contain input:focus {
+  border: 1px solid #e85c5c;
+}
+div.box {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+div.btn_box {
+  background-color: #54a6f2;
+  width: 50%;
+  text-align: center;
+  padding: 1rem;
+  border-radius: 20px;
+  color: white;
+}
+div.btn_box:hover {
+  cursor: pointer;
+  opacity: 0.5;
+}

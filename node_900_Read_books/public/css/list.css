@@ -1,0 +1,37 @@
+table.list {
+  display: flex;
+  flex: 1;
+  margin: 1rem auto;
+  justify-content: center;
+  width: 90%;
+  border-collapse: collapse;
+}
+tr {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
+th,
+td {
+  text-align: center;
+  padding: 12px 20px;
+}
+th {
+  background-color: #d9d9d9;
+}
+
+div.btn_add {
+  padding: 1rem;
+
+  width: 90%;
+  margin: 1rem auto;
+}
+div.btn_add a {
+  display: inline-block;
+  color: white;
+  background-color: #d9d9d9;
+  padding: 12px;
+  border-radius: 20px;
+}
+.books {
+  text-align: right;
+}

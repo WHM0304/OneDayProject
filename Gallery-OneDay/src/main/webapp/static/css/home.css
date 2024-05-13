@@ -25,14 +25,15 @@ body {
   display: flex;
   justify-content: end;
   align-items: end;
+  a {
+    text-decoration: none;
+    color: white;
+    background-color: cornflowerblue;
+    border-radius: 10px;
+    padding: 20px;
+  }
 }
-a {
-  text-decoration: none;
-  color: white;
-  background-color: cornflowerblue;
-  border-radius: 10px;
-  padding: 20px;
-}
+
 .section {
   width: 90%;
   margin: 10px auto;
@@ -61,6 +62,7 @@ a {
     flex: 1;
   }
   .subject {
+    margin-top: 10px;
     color: white;
     background-color: #8a83e1;
   }

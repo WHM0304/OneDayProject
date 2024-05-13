@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+header {
+  background-color: azure;
+  text-align: center;
+}
+
+footer {
+  background-color: blue;
+  padding: 10px;
+  color: whitesmoke;
+  text-align: center;
+}
+
+div.body {
+  flex: 1;
+}
+div.input_box {
+  width: 60%;
+  margin: 10px auto;
+  display: flex;
+  input {
+    padding: 10px;
+    margin-left: 10px;
+  }
+}
+
+div.list {
+  display: flex;
+  width: 60%;
+  margin: 10px auto;
+  p {
+    margin-left: 1rem;
+    display: inline-block;
+    flex: 1;
+    font-size: 1rem;
+    box-shadow: 1px 1px 1px 1px skyblue;
+  }
+}
+form.form_box {
+  display: flex;
+}
