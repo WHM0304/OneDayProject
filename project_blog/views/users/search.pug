@@ -1,0 +1,14 @@
+extends ../layout2
+
+block content
+    link(rel="stylesheet", href="/css/user/search.css")
+    script(src="/js/user/search.js")
+    h1.search 다른유저 게시판 찾아보기
+    table#table 
+        tr
+            th 아이디
+            th 게시판
+        each item in data
+            tr(data-n_seq = item.n_seq)
+                td=`${item.n_uid}`
+                td=`${item.n_title}`

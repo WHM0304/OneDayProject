@@ -1,0 +1,41 @@
+.con {
+  width: 50%;
+  margin: 10% auto;
+}
+.info {
+  margin-bottom: 10%;
+  ul {
+    display: flex;
+    padding: 10px;
+
+    li {
+      margin-left: 10px;
+      width: 100%;
+    }
+  }
+  label {
+    display: inline-block;
+    width: 40%;
+    margin-right: auto;
+    text-align: center;
+    background-color: blanchedalmond;
+  }
+}
+.button {
+  display: flex;
+  justify-content: right;
+  input {
+    padding: 10px;
+    outline: none;
+    border: none;
+    color: rgb(200, 73, 73);
+    background-color: rgb(215, 183, 248);
+    border-radius: 50%;
+    transition: 5s;
+    &:hover {
+      cursor: pointer;
+      background-color: black;
+      color: white;
+    }
+  }
+}

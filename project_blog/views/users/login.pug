@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+    link(rel="stylesheet", href="/css/user/login.css")
+    script(src="/js/user/login.js")
+    form.login(method="POST")
+        if NEED
+            div.error= NEED
+        div
+            input.login.userid(type="text",placeholder="USERID",name="u_id")
+        div
+            input.login.password(type="password",placeholder="PASSWORD",name="u_pw")
+        div
+            input.login.btn_login(type="button",value="로그인") 

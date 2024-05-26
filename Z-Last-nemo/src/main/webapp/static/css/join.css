@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+form.join {
+  width: 50%;
+  margin: 10% auto;
+  display: flex;
+  flex-direction: column;
+
+  gap: 10px;
+}
+form.join > div {
+  flex: 1;
+  display: flex;
+
+  input {
+    flex: 1;
+    max-height: 3rem;
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid black;
+  }
+}
+form.join > div:nth-last-child(2) {
+  justify-content: end;
+  .button {
+    flex: 1;
+    padding: 0.3rem;
+    border-radius: 20px;
+    outline: none;
+    background-color: black;
+    color: white;
+    text-align: center;
+    max-height: 3rem;
+    align-self: flex-end;
+    &:hover {
+      cursor: pointer;
+      opacity: 0.5;
+    }
+  }
+}

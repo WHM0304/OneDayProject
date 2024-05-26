@@ -1,0 +1,26 @@
+form.join {
+  width: 60%;
+  margin: 10px auto;
+  padding: 10px;
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    legend {
+      text-align: center;
+      padding: 1rem;
+    }
+    div {
+      display: flex;
+      padding: 2px;
+      margin-top: 3px;
+      label {
+        width: 25%;
+        text-align: right;
+        margin-right: 5px;
+      }
+      input {
+        width: 50%;
+      }
+    }
+  }
+}

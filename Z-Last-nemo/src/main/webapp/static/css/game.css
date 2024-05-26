@@ -1,0 +1,138 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html {
+  height: 100vh;
+}
+body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.game-container {
+  flex: 1;
+}
+
+.main-all-container {
+  border: 1px solid #ddd;
+  display: flex;
+  flex: 1;
+  /* flex-direction: column; */
+}
+
+.main-form-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 50%; */
+  margin: 0 auto;
+
+  input[type="checkbox"] {
+    width: 40px;
+    height: 40px;
+    margin: 1px;
+    border: 1px solid black;
+    cursor: pointer;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+  }
+  input[type="checkbox"]:checked {
+    background-color: black;
+  }
+}
+
+.main-row-hint {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  flex: 0.4;
+  text-align: right;
+  margin-right: 20px;
+}
+.main-input-box {
+  display: flex;
+  flex-direction: column;
+}
+.main-hint-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 50%; */
+  margin: 0 auto;
+}
+
+.main-column-hint {
+  display: flex;
+  /* gap: 60px; */
+  gap: 8px;
+  align-items: end;
+  margin-top: 1rem;
+  margin-right: 20px;
+  flex-wrap: wrap;
+
+  div {
+    width: 40px;
+    text-align: center;
+  }
+}
+.blank {
+  flex: 0.38;
+  text-align: right;
+}
+
+.heart {
+  color: red;
+}
+#lives {
+  margin: 0 auto;
+  text-align: center;
+}
+.clear,
+#CLEAR_IS {
+  text-align: center;
+}
+
+.main-delete {
+  margin-left: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.blue {
+  background-color: blue;
+}
+#ALL_DELETE {
+  background-image: url("../img/eraser_icon.png");
+  background-color: white;
+  background-position: center;
+  width: 96px;
+  height: 96px;
+  transition: 1s;
+  border-radius: 20px;
+  &:hover {
+    cursor: pointer;
+    background-color: #ddd;
+    background-position: right;
+  }
+}
+
+/* 테스트 */
+
+button#clear {
+  background-color: black;
+  border: 2px solid #ddd;
+  border-radius: 5%;
+  margin: 5px;
+  color: white;
+  line-height: 18px;
+  padding: 5px 9px;
+  font-weight: bold;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.5;
+  }
+}

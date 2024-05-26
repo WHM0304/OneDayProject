@@ -1,0 +1,50 @@
+doctype html
+html(lang="ko")
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta( name='viewport', content='width=device-width, initial-scale=1')
+    title= title
+    link(rel='stylesheet', href='/css/main.css')
+    script(src="/js/main.js")
+  body
+    
+    header.index 
+      ul.nav
+        li 게시판 찾기
+        if user
+          li #{user.u_nick} 님 
+          li 로그아웃
+        else 
+          li 로그인
+          li 회원가입
+        li 내정보
+      h1#home 나만의 블로그
+    div.container 
+      section.aside
+        div.nav(data-user= `${user}`)
+          p 게시판추가
+          p 게시판설정
+        div.list
+          div.announce 메모
+          if user
+            if data
+              each item in data
+                if item.n_div ==="1"
+                  p(data-n_seq=item.n_seq)= `${item.n_title}`
+          div.free 자유게시판
+          if user
+            if data
+              each item in data
+                if item.n_div === "2"
+                  p(data-n_seq=item.n_seq)= `${item.n_title}`
+          div.all 전체게시판
+          if user
+            if data
+              each item in data
+                p(data-n_seq=item.n_seq)= `${item.n_title}`
+      section.main
+        block content
+      
+
+    

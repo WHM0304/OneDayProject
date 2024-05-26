@@ -1,0 +1,25 @@
+extends ../layout
+
+block content
+    link(rel="stylesheet", href="/css/post/list.css")
+    script(src="/js/post/list.js")
+    div.box
+        header 
+            h1=`${notice.n_uid} 님의 ${notice.n_title} 게시판`
+        aside.search
+            form
+                input#input_search(type="text" placeholder="제목을 입력해주세요" , value =`${p_search}` , name="p_search")
+                input#btn_search(type="submit" value="검색")
+                input#add(type="button" value="글작성하기" data-n_seq=`${notice.n_seq}`) 
+          
+        section.list_section#list
+            if post_data
+                each item in post_data
+                    ul(data-p_seq=item.p_seq)
+                        li= item.p_date
+                        strong#mid= item.p_title
+                        div#id 
+                            li= `ID : ${item.p_uid}`
+                            
+            
+                

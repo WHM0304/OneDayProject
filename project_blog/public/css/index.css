@@ -1,0 +1,33 @@
+.time {
+  text-align: right;
+  input {
+    width: 20%;
+    display: inline-block;
+    outline: none;
+    border: none;
+    color: darkred;
+  }
+}
+.title {
+  font-size: larger;
+  width: 20%;
+  margin-left: auto;
+  margin-top: 10px;
+}
+
+.body {
+  h1 {
+    box-shadow: 1px 1px 1px 1px rgba(20, 20, 20, 0.5);
+    text-shadow: 1px 1px 1px rgba(20, 50, 100, 0.5);
+    width: 50%;
+    margin: 10px auto;
+  }
+}
+#list {
+  width: 20%;
+  margin-left: auto;
+  li {
+    list-style: circle;
+    margin-top: 5px;
+  }
+}

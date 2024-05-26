@@ -1,0 +1,17 @@
+extends ../layout
+
+block content
+    link(rel="stylesheet", href="/css/notice/insert.css")
+    script(src="/js/update.js")
+    h1 수정
+    div.data_box
+        form.input_box(method="POST")
+            input(type="text" placeholder = "제목" name= "n_title" value=`${UPDATE.n_title}` ) 
+            select(name="n_div")
+                option 게시판을 선택해주세요
+                option(value="1") 메모 
+                option(value="2") 자유게시판
+                option(value="3") 기타
+            div 
+                input.add(type="button" value= "수정")
+                input.input_delete(type="button" value= "삭제" data-n_seq =`${UPDATE.n_seq}` )

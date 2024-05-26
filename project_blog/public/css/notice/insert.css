@@ -1,0 +1,24 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: 10px auto;
+  input,
+  select {
+    margin-top: 10px;
+    padding: 10px;
+  }
+  div {
+    display: flex;
+    gap: 5px;
+    transition: 0.5s;
+    input {
+      width: 100%;
+      &:hover {
+        cursor: pointer;
+        background-color: darkred;
+        color: white;
+      }
+    }
+  }
+}

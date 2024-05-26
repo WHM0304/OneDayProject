@@ -1,0 +1,402 @@
+/* ------------------------ 추가 */
+.HM-home_diary {
+  width: 99%;
+  margin: 0 auto;
+
+  border: 5px double rgb(222, 65, 65);
+  border-bottom: none;
+  white-space: nowrap;
+  margin-top: 10px;
+
+  /* 일기내용 손글씨체 */
+  font-family: "Gaegu", sans-serif;
+  font-size: 15px;
+}
+/* 일기 제목, 날짜등등 손글씨체 */
+.HM-home_second_menu label,
+.HM-home_cal span {
+  font-family: "Gaegu", sans-serif;
+  font-size: 25px;
+  white-space: nowrap;
+}
+/* 게임 컴플리트 이미지 부분, 일기간격 맞추기 */
+.complete_img_box {
+  height: 490px;
+  width: 700px;
+}
+
+.HM-home_picture {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto 15px auto;
+}
+.h1h1h1 {
+  color: rgb(98, 58, 109);
+}
+
+div.YS_p_div {
+  width: 100%;
+
+  margin: auto;
+}
+
+/* width: 247px;
+height: 251px; */
+img.YS_picture {
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+img.YS_picture_c {
+  width: 100%;
+  height: 100%;
+}
+
+/* .HM-home_diary {
+  height: 250px;
+} */
+/* 
+  h2.YS_diary_row {
+    font-weight: 700;
+  
+    margin-left: 15px;
+    margin-right: 15px;
+    border-bottom: 5px dotted rgb(222, 65, 65);
+  }
+  
+  h2.YS_diary_row_n {
+  
+    margin-left: 15px;
+    margin-right: 15px;
+    border-bottom: 5px dotted rgb(222, 65, 65);
+  } */
+
+h2.YS_diary_row {
+  font-weight: 700;
+  /* text-align: center; */
+  margin-left: 15px;
+  margin-right: 15px;
+}
+/* 비어있는 일기 줄 */
+h2.YS_diary_row_n {
+  /* height: 1 rem; */
+  margin-left: 15px;
+  margin-right: 15px;
+}
+section.YS_border-bottom {
+  border-bottom: 5px double rgb(222, 65, 65);
+}
+
+/* 다음단계 깜빡여서 클릭할 위치알려주기 */
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* 나중에 게임으로 이동할때도 class가 .next_level 이면 바로넘어가고
+  다른거 누르면 이미 클리어한 라운드 입니다 다시하시겠습니까? 알림창뜨게 다시하면 리셋주소보냈다가 겜화면으로
+  클리어 기록은 그대로
+  */
+.next_level {
+  background-color: rgb(255, 176, 176);
+  animation: blink 1s infinite; /* 1초 간격으로 무한 반복 */
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    /* background-color: #efefef; */
+  }
+}
+
+/* 완성하면 완성한단계에서 나타나기 */
+.fade-in {
+  opacity: 0; /* 초기에 투명도를 0으로 설정 */
+  animation: fadeInAnimation 1.5s ease-in forwards; /* n초 동안 서서히 나타나는 애니메이션 적용 */
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0; /* 시작 시 투명도 0 */
+  }
+  to {
+    opacity: 1; /* 끝나는 시점에 투명도 1로 설정하여 나타나는 효과 */
+  }
+}
+
+/* --------------------- */
+.crayon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  width: 200px;
+  height: auto;
+
+  animation: crayonAnimation 1s;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+@keyframes crayonAnimation {
+  0% {
+    top: calc(50% - 40px);
+    left: calc(50% - 40px); /* 화면 가운데에서 시작 */
+  }
+  25% {
+    top: calc(50% - 20px); /* 화면 가운데 유지 */
+    left: calc(50% + 40px); /* 오른쪽으로 이동 */
+  }
+  50% {
+    top: calc(50% + 60px); /* 아래로 이동 */
+    left: calc(50% - 20px); /* 화면 가운데 유지 */
+  }
+  100% {
+    top: calc(50% + 60px); /* 화면 가운데 유지 */
+    left: calc(50% + 120px); /* 오른쪽으로 이동 */
+  }
+}
+
+/* 일기내용 나타나기 */
+.fade-in2 {
+  animation: fadeInRight 0.5s ease-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* --- */
+div.HM-home_picture {
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+/* 5단계용 */
+.hidden {
+  display: none;
+}
+
+/* 4단계까지 클리어하고나서 뜰 ! 그림 */
+section.ex-mark {
+  margin-left: -7px;
+  border-left: 10px solid white;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+/* 이클래스를 누르면... */
+.next_level5 {
+  /* background-color: rgb(255, 176, 176); */
+  animation: blink 1s infinite; /* 1초 간격으로 무한 반복 */
+  &:hover {
+    cursor: pointer;
+    opacity: 0.6;
+    /* background-color: #efefef; */
+  }
+}
+
+/* -- */
+.HM-home_picture {
+  display: flex;
+  & > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    div {
+      flex: 1;
+      border: 1px solid black;
+    }
+  }
+}
+/* --------- */
+
+.ex-mark:hover::before {
+  content: "BOSS STAGE";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: red;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  font-size: 55px;
+  font-weight: bold;
+}
+
+.ex-mark::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: red;
+  padding: 10px 20px;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 게임 클리어 메시지 */
+
+.clear_msg {
+  /* 글씨체 */
+  font-family: "Bagel Fat One", system-ui;
+
+  color: red;
+  font-size: 60px; /* 글자 크기 */
+  /* text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); 그림자 설정 */
+  text-shadow: 0 0 10px white;
+
+  text-align: center;
+
+  position: absolute;
+  top: 50%; /* 문어 그림 위쪽으로부터의 거리 조절 */
+  left: 50%; /* 가운데 정렬 */
+  transform: translate(-50%, -50%); /* 수직, 수평 가운데 정렬 */
+
+  /* 클리어시에만 보이게 처음엔 none */
+  display: none;
+}
+
+.clear_msg span {
+  position: relative;
+  animation: bounce 0.3s ease infinite alternate; /* 애니메이션 설정 */
+}
+
+.clear_msg span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.clear_msg span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.clear_msg span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.clear_msg span:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.clear_msg span:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.clear_msg span:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  100% {
+    top: -10px;
+  }
+}
+
+/* 메시지보이게 맨처음에는 none */
+.show_clear {
+  display: block;
+}
+
+/* 클리어화면 */
+div.clear_picture {
+  img.fade-in {
+    width: 500px;
+    height: 500px;
+    border: 5px solid black;
+  }
+  h1 {
+    margin-top: 10px;
+    text-align: center;
+  }
+  margin: auto;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}
+
+div.clear_page_msg_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* 완성했어! 부분 */
+.clear_msg_new {
+  color: black;
+  font-size: 60px; /* 글자 크기 */
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.2); /* 그림자 설정 */
+  text-align: center;
+  position: absolute;
+}
+
+.clear_msg_new span {
+  position: relative;
+  animation: bounce 0.3s ease infinite alternate; /* 애니메이션 설정 */
+}
+
+.clear_msg_new span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.clear_msg_new span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.clear_msg_new span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.clear_msg_new span:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.clear_msg_new span:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.clear_msg_new span:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+@keyframes bounce {
+  100% {
+    top: -10px;
+  }
+}
+
+/* 메시지보이게 맨처음에는 none */
+.show_clear {
+  display: block;
+}
+
+/* 클리어화면 */
+div.clear_picture {
+  img.fade-in {
+    width: 500px;
+    height: 500px;
+    border: 3px solid black;
+  }
+  h1 {
+    margin-top: 10px;
+    text-align: center;
+  }
+  margin: auto;
+  &:hover {
+    cursor: pointer;
+    opacity: 0.7;
+  }
+}

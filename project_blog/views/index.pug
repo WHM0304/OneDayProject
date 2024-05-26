@@ -1,0 +1,20 @@
+extends layout
+
+block content
+  link(rel="stylesheet", href="/css/index.css")
+  script(src="/js/index.js")
+  div.body 
+    if user
+      h1= `${user.u_nick} 님의 블로그`
+    else 
+      h1 블로그
+    header.time 
+      input#date(type="text" readonly=true )
+    body
+      if user
+        div.title 오늘 쓴 게시글
+        each item in active
+          div#list
+            ul
+              li=`${item.p_title}`
+        

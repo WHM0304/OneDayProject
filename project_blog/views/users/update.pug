@@ -1,0 +1,9 @@
+extends ../layout
+
+block content
+    link(rel="stylesheet", href="/css/user/up.css")
+    h1 업데이트
+    form(method="POST" data-u_id = _u_id)
+        strong 닉네임
+        input(type="text" name="u_nick" value=`${u_nick}`)
+        input(type="submit" value="수정하기")

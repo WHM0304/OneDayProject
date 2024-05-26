@@ -1,0 +1,22 @@
+extends ../layout
+
+block content
+    link(rel="stylesheet", href="/css/post/detail.css")
+    script(src="/js/post/detail.js")
+    header.header
+        div
+            h1=`${post_data.p_title}`
+            div.info
+                span=`${post_data.p_date}` 
+                span=`${post_data.p_time}`
+                strong  닉네임 #{post_data.p_u.u_nick}
+    section.body
+        div.content_box= `${post_data.p_content}`
+        div.img_box
+            if post_data.p_image
+                img(src=`/upLoad_file/${post_data.p_image}` width="150px")
+        div.button_box(data-p_seq = post_data.p_seq)
+                if user.u_id == post_data.p_u.u_id
+                    input(type="button" , value= "수정하기")
+                    input(type="button" , value= "삭제하기")
+                input#n_seq(type="button" , value="리스트" data-n_seq= n_seq)

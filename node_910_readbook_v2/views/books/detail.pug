@@ -1,0 +1,32 @@
+extends ../books/main
+
+block book_content
+    script(src="/js/detail.js")
+    link(rel="stylesheet", href="/css/books/detail.css")
+    h1.head 자세히보기
+    each books in book
+        div.detail
+            strong ISBN
+            span= books.isbn
+        div.detail
+            strong 도서명
+            span= books.title
+        div.detail
+            strong 출판사
+            span= books.publisher
+        div.detail
+            strong 저자
+            span= books.author
+        div.detail
+            strong 가격
+            span= books.price
+        div.detail
+            strong 할인가격
+            span= books.discount
+        div.detail
+            strong 일자
+            span= books.pubdate
+        div.btn_box
+            input(type="button" , value = "리스트로") 
+            input(type="button", value = "수정")
+            input(type="button", value = "삭제")

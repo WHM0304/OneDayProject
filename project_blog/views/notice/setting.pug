@@ -1,0 +1,11 @@
+extends ../layout
+
+
+block content
+    link(rel="stylesheet", href="/css/notice/setting.css")
+    script(src="/js/setting.js")
+    h1 설정할 게시판을 선택해주세요
+    div.data_box
+        each item in data
+            ul(data-n_seq = `${item.n_seq}`)
+                li(data-seq=`${item.n_seq}`)=  `제목 ${item.n_title}`

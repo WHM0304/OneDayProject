@@ -1,0 +1,16 @@
+extends ../layout
+
+
+block content
+    link(rel="stylesheet", href="/css/books/main.css")
+    section.books
+        aside
+            a(href="/books") 도서목록
+            a(href="/books/insert") 도서등록
+        article.body
+            //- if BODY === 'LIST'
+            //-     include ./list.pug
+            //- if BODY === 'INPUT'
+            //-     include ./input.pug
+            block book_content
+            

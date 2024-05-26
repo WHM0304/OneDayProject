@@ -1,0 +1,67 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100vh;
+}
+
+body {
+  height: 100%;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+header {
+  background-image: url("/images/header.jpg");
+  background-size: 100vw 100%;
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
+
+nav {
+  background-color: rgb(8, 65, 8);
+  color: white;
+  padding: 10px;
+  ul {
+    list-style: none;
+    display: flex;
+    li {
+      padding: 10px 20px 3px;
+      border-bottom: 3px solid transparent;
+      transition: 0.5s;
+      /* 클래스나 콜론(:) 이 붙은경우에는 앞에 &를 붙여야한다 */
+      &:hover {
+        cursor: pointer;
+        border-bottom: 3px solid white;
+      }
+      &:nth-of-type(3) {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+footer {
+  background-color: #ccc;
+  padding: 0.5rem;
+  text-align: center;
+}

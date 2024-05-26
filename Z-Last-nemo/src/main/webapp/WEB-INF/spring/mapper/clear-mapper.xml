@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nemo.hello.dao.ClearDao">
+
+	<select id="findByRow">
+		SELECT * FROM tbl_clear
+		WHERE c_id = #{c_id} AND c_level = #{c_level}
+	</select>
+	
+	<insert id="insert">
+		INSERT INTO tbl_clear(c_id, c_level,c_clear)
+		VALUES(#{c_id},#{c_level},#{c_clear})
+	</insert>
+	<update id="update">
+	</update>
+	<delete id="delete"></delete>
+
+</mapper> 

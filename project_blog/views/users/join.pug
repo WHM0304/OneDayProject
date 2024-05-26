@@ -1,0 +1,24 @@
+extends ../layout
+
+
+block content
+    script(src="/js/user/join.js")
+    link(rel="stylesheet", href="/css/user/join.css")
+    form.join(method ="POST")
+        fieldset 
+            legend 회원가입
+            div
+                label(for="") 사용자ID
+                input(type="text", name = "u_id" , id= "userid")
+            div
+                label(for="") 비밀번호
+                input(type="password",name= "u_pw", id= "password")
+            div
+                label(for="") 비밀번호확인
+                input(type="password", name= "re_pw",id="re_password")
+            div
+                label(for="") 사용자이름
+                input(type="text",name= "u_nick",id="nick")
+            div.btn
+                label(for="") 
+                input(type="button", value="회원가입",id="join_btn")
